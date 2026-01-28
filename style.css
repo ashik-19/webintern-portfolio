@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    
+}
+
+#box{
+    width: 150px;
+    height:150px;
+    background-color: steelblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.active{
+    background-color: crimson;
+    transform: scale();
+}
