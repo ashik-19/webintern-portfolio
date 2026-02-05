@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;   
+}
+
+input{
+    padding: 8px;
+    width: 20px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+}
+body {
+    background-image: url("alien-pyramid-3840x2160-16012.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    
+    
+}
+#countryInput{
+    padding: 12px 18px;
+    width: 260px;
+    border : none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    font
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+
+    transition: 0.3s;
+    background: white;
+    box-shadow: 0 0 10px cyan;
+}
