@@ -2,6 +2,9 @@ body {
   font-family: Arial;
   text-align: center;
   margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 .gallery {
   display: grid;
@@ -17,6 +20,15 @@ body {
 }
 .gallery img:hover{
   transform: scale(1.15);
+}
+.theme-toggle-btn{
+  border-radius: 6px;
+  background: var(--accent-color);
+  padding: 8px 14px;
+  cursor:pointer;
+  color: white;
+  border: none;
+
 }
 .modal{
   display: none;
@@ -55,4 +67,72 @@ body {
 @keyframes zoom {
   from { transform:scale(0.7);}
   to {transform: (1);}
+}
+
+:root{
+  --bg-color: #ffffffff;
+  --text-color: #000000;
+  --card-bg: #f5f5f5f5;
+  --accent-color: #007bff;
+}
+
+[data-theme="dark"]{
+  --bg-color: #050510;
+  --text-color: #00f7ff;
+  --card-bg: rgba(0, 247, 255, 0.05);
+  --accent-color: #b11c5f;
+
+  --neon-glow: 0 0 8px #00f7ff,
+                0 0 20px #00f7ff,
+                0 0 40px #00f7ff;
+}
+/* [data-theme="dark"]{
+  --bg-color: #121212;
+  --text-color:#ffffff;
+  --card-bg: #3a3737;
+  --accent-color: #4dabf7;
+} */
+[data-theme="dark"] body {
+  background: radial-gradient(circle at top,
+              #0a0a25,
+              #020210 70%);
+}
+[data-theme="dark"] h2 {
+  text-shadow: var(--neon-glow);
+}
+
+[data-theme="dark"] .gallery img {
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 10px #00f7ff55;
+  transition: 0.3s;
+}
+[data-theme="dark"] .gallery img:hover {
+  transform: scale(1.1);
+  box-shadow:
+      0 0 10px #00f7ff,
+      0 0 25px #00f7ff,
+      0 0 50px #ff00ff;
+}
+[data-theme="dark"] .theme-toggle-btn {
+  background: transparent;
+  color: #00f7ff;
+  border: 2px solid #00f7ff;
+  box-shadow: var(--neon-glow);
+}
+[data-theme="dark"] .modal-content {
+  box-shadow:
+    0 0 20px #00f7ff,
+    0 0 40px #ff00ff;
+}
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 5px #00f7ff; }
+  50% { text-shadow: 0 0 25px #00f7ff; }
+  100% { text-shadow: 0 0 5px #00f7ff; }
+}
+
+[data-theme="dark"] h2 {
+  animation: neonPulse 2s infinite;
+}
+.gallery img{
+ background: var(--card-bg);
 }
